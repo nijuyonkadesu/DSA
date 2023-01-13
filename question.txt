@@ -1,0 +1,93 @@
+10.01.2023
+1. Apply insertion sort to sort a set of n names
+2. Find 2nd minimum and 2nd maximum element in an n element array
+3. Rotate an array k times left or right as a choise based program
+4. Dutch flag problem
+5. class seating arrangement. No two person form same dept sit together and no two opposite sex people sits together.
+6. No of total handshakes happen problem
+
+
+// Things to see:...
+// modular arithmetic
+// RSA, a is congruent to b mod x: a%x = b%x is same
+// (a+b) % x => (a % x + b % x) % x  :: Uses > Time adjustment +5:30 gmt
+// Equivalence class :: 3's factor 0,1,3
+//
+// class 1 class 2 class 3
+// 0 1 2
+// 3 4 5
+// 6 7 8 ... add 3 to all, and continue
+// 
+// this is a cryptographic algorithm, 
+// we get same remainder on % on different class!!
+
+11.01.2023
+1. find the peak element which is not smaller than it's neighbours
+2. find minimum in rotated sorted array
+3. assigning a cooking: 
+    distribute set of cookies to the children, make sure that each child should get atmost one cookie
+    our goal is to maximize the number of cookies to the children and ensuree that none of the children
+    should be left empty without any cookie. [] 
+4. Word learning: using bfs, dfs (minimum spanning)
+5. Dijiktras 
+6. Kruskal, Prims (minimum spanning tree) (GREEDY)
+7. Change Making Problem (Usually greedy require all possible combination to get best results)
+
+ - Greedy ✅, Branch and Bound ❎, Dynamic Programming ✅(Optimal Solution)
+ - Similar and Smaller problem - Divide and Conquer (to get Set of Solution) 
+ - Extention of D&C is Dynamic Programming - in table
+ - Huristic solution close to optimal solution.
+
+8. Fractional / 01 knapsack problem 
+   - cannot exceed max capacity
+   - steal max profitable item
+   - 0/1 - DP(if non-divisible)
+   - Fractional (Greedy) (to be used if the items are divisible)
+   - max profit items, minimum weight items, product of (profit,weight)
+       -- initial solution
+       -- selective solution
+       -- feassible solution
+       -- optimal Solution
+       -- maximization / minimization Problem
+
+Profit  30  40  45  77  90
+weight   5  10  15  22  25
+
+9. Two city scheduling
+
+Graphs can have loop ☢️ - Graphs don't have a root
+Trees cannot - Trees have root
+
+MST - overall weight minimum != node-node have minimum weight
+MST - Network design (to minimize traffic on broadcast signals), circuit design, cancer detection
+Tree - Find out direction between physical locations like in Google Maps
+Traversal - Directory, XML/HTML, similar to iterating/enumerating array, this is traversal because you have to choose a next node, and you'll come back to visit the missed nodes and visit all.
+AVL - In memory sorts of sets & dictionary, database insertion / deletion (improve searching), story line games. (but large cost for sorting limits it's usefullness)
+
+
+---------------------------
+
+String matching: 
+- DNA Analysis
+ 1. Naive Algorithm O(M(N-M+1))
+ 2. KMP O(N) - Degenerating property - preprocessing to identify Prefix & Suffix
+    - search for proper prefixes in subpattern
+ 3. Robin Karp Algorithm - hash compare O(M)
+
+-----------------------------
+
+DP - Greedy, Floyd Warshall - DC + Storage
+   - Longest Common Subsequence
+Top down - huristic 
+Bottom up - optimistic
+
+
+-----------------------------
+
+Repeated String matching
+Count Binary Substrings
+Most Common Word
+Goat Latin
+Car pooling 
+Two City scheduling
+
