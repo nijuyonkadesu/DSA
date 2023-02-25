@@ -122,6 +122,16 @@ NFA build_nfa_star(NFA nfa){
     return nfa;
 }
 
+NFA build_nfa_concat(NFA nfa1, NFA nfa2){
+    // 1's final overlaps with 2's initial
+    nfa2.shift_states(nfa1.size - 1);
+    NFA new_nfa(nfa2);
+
+    new_nfa.fill_states(nfa1);
+    new_nfa.initial = nfa1.initial;
+
+    return new_nfa;
+}
 
 void NFA::show() {
     cout<<"NFA States: "<<size<<" 0 to "<<size-1<<endl;
