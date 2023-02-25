@@ -105,6 +105,23 @@ NFA build_nfa_alter(NFA nfa1, NFA nfa2){
     return new_nfa;
 }
 
+NFA build_nfa_star(NFA nfa){
+    // create empty states all around the trans_table
+    // and update initial and final state
+    nfa.shift_states(1);
+    nfa.append_empty_state();
+
+    nfa.add_trans(nfa.final, nfa.initial, EPS);
+    nfa.add_trans(0, nfa.initial, EPS);
+    nfa.add_trans(nfa.final, nfa.size - 1, EPS);
+    nfa.add_trans(0, nfa.size - 1, EPS);
+
+    nfa.initial = 0;
+    nfa.final = nfa.size - 1;
+
+    return nfa;
+}
+
 
 void NFA::show() {
     cout<<"NFA States: "<<size<<" 0 to "<<size-1<<endl;

@@ -36,5 +36,6 @@ class NFA {
 // NFA building functions
 
 NFA build_nfa_alter(NFA nfa1, NFA nfa2);
+NFA build_nfa_star(NFA nfa);
 
 #endif
