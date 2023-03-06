@@ -4,8 +4,6 @@
 #include<cstdlib>
 #include "nfa.h"
 
-using namespace std;
-
 NFA::NFA(unsigned size_, state initial_, state final_){
     size = size_;
     initial = initial_;
@@ -74,6 +72,13 @@ void NFA::fill_states(const NFA &other){
     for(set<input>::const_iterator i = other.inputs.begin();
             i != other.inputs.end(); ++i)
         inputs.insert(*i);
+}
+
+NFA build_nfa_basic(input in){
+    // Build basic nfa for a single input    
+    NFA basic(2, 0, 1);
+    basic.add_trans(0, 1, in);
+    return basic;
 }
 
 NFA build_nfa_alter(NFA nfa1, NFA nfa2){
