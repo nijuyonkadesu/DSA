@@ -12,3 +12,6 @@ int main(){
     sab.show(); 
     return 0; 
 }
+
+// Reference and original author:
+// Eli Bendersky (eliben@gmail.com)

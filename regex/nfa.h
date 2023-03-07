@@ -2,6 +2,9 @@
 #define NFA_H
 #include <vector>
 #include <set>
+#include <iostream>
+#include <cassert>
+// Implement Copy constructor
 
 using namespace std;
 

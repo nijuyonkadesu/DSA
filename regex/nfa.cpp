@@ -1,6 +1,5 @@
 #include<iostream>
 #include<string>
-#include<cassert>
 #include<cstdlib>
 #include "nfa.h"
 
@@ -116,10 +115,10 @@ NFA build_nfa_star(NFA nfa){
     nfa.shift_states(1);
     nfa.append_empty_state();
 
-    nfa.add_trans(nfa.final, nfa.initial, EPS);
+    nfa.add_trans(nfa.final, nfa.initial, EPS); // loop
     nfa.add_trans(0, nfa.initial, EPS);
     nfa.add_trans(nfa.final, nfa.size - 1, EPS);
-    nfa.add_trans(0, nfa.size - 1, EPS);
+    nfa.add_trans(0, nfa.size - 1, EPS); // skip
 
     nfa.initial = 0;
     nfa.final = nfa.size - 1;
