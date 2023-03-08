@@ -1,16 +1,9 @@
 #ifndef NFA_H
 #define NFA_H
-#include <vector>
-#include <set>
-#include <iostream>
-#include <cassert>
+
+#include "common.h"
+
 // Implement Copy constructor
-
-using namespace std;
-
-typedef unsigned state;
-typedef char input;
-enum {EPS = -1, NONE = 0};
 
 class NFA {
     public:
@@ -25,7 +18,6 @@ class NFA {
         void shift_states(unsigned shift);
         void fill_states(const NFA& other);
 
-    // private:
         bool is_legal_state(state s);
         state initial;
         state final;
@@ -34,6 +26,7 @@ class NFA {
 
         // set of all input states
         set<input> inputs;
+        set<state> move(set<state> states, input inp);
 };
 
 // NFA building functions

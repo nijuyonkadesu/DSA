@@ -1,12 +1,7 @@
-#include<iostream>
-#include<string>
-#include<cstdlib>
 #include "nfa.h"
 
-NFA::NFA(unsigned size_, state initial_, state final_){
-    size = size_;
-    initial = initial_;
-    final = final_;
+NFA::NFA(unsigned size_, state initial_, state final_): 
+initial(initial_), final(final_), size(size_) {
     assert(is_legal_state(initial));
     assert(is_legal_state(final));
 
@@ -26,6 +21,10 @@ void NFA::add_trans(state from, state to, input in){
     assert(is_legal_state(from));
     assert(is_legal_state(to));
     trans_table[from][to] = in;
+
+    // constructs the Language
+    if (in != EPS)
+        inputs.insert(in);
 }
 
 void NFA::append_empty_state(){
@@ -155,5 +154,22 @@ void NFA::show() {
             }
         }
     }
+}
+
+// To find for the given states
+// which can accept the given input
+// and returns a set with all destination state
+set<state> NFA::move(set<state> states, input inp){
+    set<state> result;
+
+    for(auto state_i = states.begin(); state_i != states.end(); ++state_i){
+        for(auto trans_i = trans_table[*state_i].begin(); trans_i != trans_table[*state_i].end(); ++trans_i){
+            if(*trans_i == inp){
+                state u = trans_i - trans_table[*state_i].begin();
+                result.insert(u);
+            }
+        }
+    }
+    return result;
 }
 
