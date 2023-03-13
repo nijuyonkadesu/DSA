@@ -3,4 +3,4 @@
 
 float add(float a, float b);
 
-#endif // DEBUG
+#endif
