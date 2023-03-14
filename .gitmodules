@@ -1,0 +1,3 @@
+[submodule "simple_physics/external/glfw"]
+	path = simple_physics/external/glfw
+	url = https://github.com/glfw/glfw.git
