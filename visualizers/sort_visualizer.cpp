@@ -4,6 +4,7 @@
 #include<random>
 #include<ranges>
 #include<algorithm>
+#include<ctime>
 
 // c++ -lSDL2 sort_visualizer.cpp
 
@@ -28,7 +29,8 @@ void drawState(vector<int>& v, SDL_Renderer* renderer, int red, int blue){
 }
 
 int main(){
-    random_device rd;
+    // current unix time as seed
+    default_random_engine rd(time(0));
     // the numbers tell the size of pixel
     uniform_int_distribution<> d(1,100);
     vector<int> v(100);
