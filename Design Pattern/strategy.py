@@ -15,9 +15,13 @@ Strategy pattern:
 
 """
 
+from abc import abstractmethod
+
+
 class IQuackStrategy:
+    @abstractmethod
     def run(self) -> str:
-        raise NotImplementedError()
+        pass
 
 class SimpleQuack(IQuackStrategy):
     def run(self) -> str:
@@ -30,8 +34,9 @@ class DeathQuack(IQuackStrategy):
 # ---------------------------------------------
 
 class IFlyStrategy:
+    @abstractmethod
     def run(self) -> str:
-        raise NotImplementedError()
+        pass
 
 class SimpleFly(IFlyStrategy):
     def run(self) -> str:
